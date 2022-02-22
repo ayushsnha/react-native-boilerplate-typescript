@@ -20,6 +20,16 @@ module.exports = {
         'react-native',
         '@typescript-eslint',
     ],
+    settings: {
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
+        },
+    },
     rules: {
         'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
         indent: [2, 4],
@@ -27,5 +37,17 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'no-use-before-define': 0,
+        'import/no-unresolved': [2, { ignore: ['@env'] }],
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+                mjs: 'never',
+            },
+        ],
     },
 };
