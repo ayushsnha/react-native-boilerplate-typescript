@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     StyleSheet,
     Text,
     View,
 } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
-const App = () => (
-    <View style={styles.sectionContainer}>
-        <Text style={styles.text}>React Native Boilerplate</Text>
-    </View>
-);
+const App = () => {
+    useEffect(() => {
+        SplashScreen.hide();
+    }, []);
+
+    return (
+        <View style={styles.sectionContainer}>
+            <Text style={styles.text}>React Native Boilerplate</Text>
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     sectionContainer: {
